@@ -8,8 +8,18 @@
 
 import UIKit
 
+var Todokobetsu = [String]()
+
 class AddController: UIViewController {
 
+    @IBOutlet weak var TodoTextField: UITextField!
+    
+    @IBAction func TodoAddButton(_ sender: Any) {
+        Todokobetsu.append(TodoTextField.text!)
+        TodoTextField.text = ""
+        
+        UserDefaults.standard.set(Todokobetsu, forKey: "TodoList")
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
