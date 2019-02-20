@@ -6,25 +6,38 @@
 //  Copyright © 2019年 Masaki. All rights reserved.
 //
 
+//  AddController.swift
 import UIKit
 
+//変数の設置
 var Todokobetsu = [String]()
 
 class AddController: UIViewController {
-
+    
+    //テキストフィールドの設定
     @IBOutlet weak var TodoTextField: UITextField!
     
-    @IBAction func TodoAddButton(_ sender: Any) {
+    //追加ボタンの設定
+    @IBAction func TodoAddButten(_ sender: Any) {
+        //変数に入力内容を入れる
         Todokobetsu.append(TodoTextField.text!)
+        //追加ボタンを押したらフィールドを空にする
         TodoTextField.text = ""
-        
-        UserDefaults.standard.set(Todokobetsu, forKey: "TodoList")
+        //変数の中身をUDに追加
+        UserDefaults.standard.set( Todokobetsu, forKey: "TodoList" )
     }
+    
+    //最初からあるコード
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
+    
+    //最初からあるコード
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+}
+
     
 
     /*
@@ -37,4 +50,3 @@ class AddController: UIViewController {
     }
     */
 
-}
